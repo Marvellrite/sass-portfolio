@@ -1,0 +1,102 @@
+.projects {
+    padding-bottom: 2rem;
+
+    &__bio-image {
+        height: 30vh;
+        width: 100%;
+        background: 
+            linear-gradient(
+                to right,
+                rgba($pColor, 0.9),
+                rgba($pColor, 0.3)
+            ),
+            url('../img/model-1.jpg') center top;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+
+        .text-secondary {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 60vw;
+        margin: 2rem auto 0 auto;
+        grid-gap: 2rem;
+    }
+
+    &__item {
+        position: relative;
+        border-bottom: 5px solid $sColor;
+        overflow: hidden;
+        cursor: pointer;
+
+        img {
+            width: 100%;
+        }
+
+        &::after {
+            content: "";
+            background-color: $sColor;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 100%;
+            left: 0;
+            opacity: 0;
+            @include transition-ease;
+        }
+
+        &:hover {
+            &::after {
+                top: 0;
+                opacity: 0.9;
+            }
+             .projects__btn {
+                opacity:1;
+            }  
+        }
+
+ 
+    }
+
+
+     
+    .social-icons {
+        display: flex; 
+        flex-direction: column;
+    }
+
+    &__btns {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    &__btn {
+        opacity: 0;
+        color: set-text-color($sColor);
+        // transition: color 0.5s ease-in-out;
+        @include transition-ease;
+        &:hover {
+            color: set-text-color(set-text-color($sColor));
+        }
+    }
+
+   footer {
+    transform: rotate(90deg) translate(-3rem, -4rem);
+    } 
+}
+

@@ -1,0 +1,22 @@
+.home {
+    height: 100%;
+    background:  linear-gradient(to right, rgba($pColor, 0.9),
+    rgba($pColor, 0.3)), url('../img/model-1.jpg') 50% top;
+    // background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding-top: 40vh;
+
+    &_name {
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 5em;
+        padding-bottom: 0.5rem;
+        border-bottom: #fff 2px solid;
+
+        &-last {
+            color: $sColor;
+            font-weight: 700;
+        }
+    }
+}
